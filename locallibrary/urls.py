@@ -40,3 +40,29 @@ from django.conf.urls.static import static
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+'''
+📌 實際效果
+
+假設設定如下：
+
+STATIC_URL = '/static/'
+STATIC_ROOT = /path/to/project/staticfiles/
+
+
+當使用者請求：
+
+http://localhost:8000/static/css/style.css
+
+
+Django 會：
+
+將 URL /static/css/style.css
+
+對應到檔案：
+
+/path/to/project/staticfiles/css/style.css
+
+
+將檔案直接回傳給瀏覽器
+'''
