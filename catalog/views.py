@@ -35,6 +35,8 @@ class BookListView(generic.ListView):
 
     context_object_name = 'book_list'   # your own name for the list as a template variable
 
+    paginate_by = 2
+
     # Overriding methods in class-based views
     def get_queryset(self):
         return Book.objects.filter(title__icontains='the')[:5] # Get 5 books containing the title the
