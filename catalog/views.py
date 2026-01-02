@@ -37,7 +37,7 @@ class BookListView(generic.ListView):
 
     # Overriding methods in class-based views
     def get_queryset(self):
-        return Book.objects.filter(title__icontains='war')[:5] # Get 5 books containing the title war
+        return Book.objects.filter(title__icontains='the')[:5] # Get 5 books containing the title the
     
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
@@ -45,3 +45,6 @@ class BookListView(generic.ListView):
         # Create any data and add it to the context
         context['some_data'] = 'This is just some data'
         return context
+    
+class BookDetailView(generic.DetailView):
+    model = Book
